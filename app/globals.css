@@ -32,3 +32,9 @@ footer p{margin:0}
 .leadership-initiative .eyebrow{margin:0}.leadership-initiative h3{font-size:clamp(1.5rem,3vw,2.5rem);line-height:1.05;letter-spacing:-.035em;margin:0 0 1rem}.leadership-initiative p:last-child{line-height:1.6;margin-bottom:0}
 @media(max-width:900px){.leadership-initiative{grid-template-columns:1fr;gap:1rem}}
 @media(max-width:560px){body{padding-bottom:68px}footer{display:flex;min-height:68px;padding:.55rem 5vw;gap:.7rem}footer p{display:none}.footer-actions{margin-left:auto;gap:.7rem}.footer-actions button{font-size:.62rem}.footer-cta{padding:.7rem .75rem;font-size:.66rem}.legal-modal{padding:2rem 1.4rem}}
+
+.brand-lockup{display:flex;align-items:center;gap:.8rem}
+.brand-lockup .brand i{color:var(--orange);font-style:normal}
+.brand-name,.footer-name{font-size:.76rem;font-weight:900;text-transform:uppercase;letter-spacing:.09em}
+.footer-name span{color:var(--orange)}
+@media(max-width:560px){.brand-name{font-size:.68rem}.site-header{padding-left:4vw;padding-right:4vw}.footer-name{font-size:.66rem;max-width:72px;line-height:1.2}footer{padding-left:4vw;padding-right:4vw;gap:.5rem}.footer-actions{gap:.55rem}.footer-actions button{font-size:.6rem}.footer-cta{padding:.65rem .6rem;font-size:.62rem}}
