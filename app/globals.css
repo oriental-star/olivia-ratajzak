@@ -872,8 +872,8 @@ footer button {
   margin: 55px 0;
   padding: 1.5rem 2rem;
   border-left: 7px solid var(--orange);
-  background: rgba(255, 255, 255, 0.08);
-  color: var(--mint);
+  background: #fff;
+  color: var(--blue);
   font-size: clamp(1.5rem, 2.8vw, 2.5rem);
   font-weight: 800;
   line-height: 1.25;
