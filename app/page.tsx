@@ -43,7 +43,7 @@ const c = {
         "Heute",
         "Menschen & Organisation",
         "Rahmen schaffen, in denen Teams erfolgreich sein können",
-        "Heute richte ich meinen Blick über das eigene Team hinaus: Ich gestalte Schnittstellen, Arbeitsweisen und Strukturen so, dass Zusammenarbeit auch über Bereichsgrenzen hinweg funktioniert.",
+        "Heute richte ich meinen Blick über das eigene Team hinaus: Ich gestalte Schnittstellen, Arbeitsweisen und Strukturen so, dass Zusammenarbeit auch über Team- und Bereichsgrenzen hinweg funktioniert.",
       ],
     ],
     claim:
@@ -93,7 +93,7 @@ const c = {
       "Gute Transformation entsteht nicht am Reißbrett. Die entscheidenden Details kennen oft die Menschen, die täglich mit ihnen arbeiten.",
     bk: "Leadership beyond my role · Lean In Circles",
     bt: "Einen Raum schaffen, den es vorher nicht gab.",
-    bx: "Bei einem Leadership-Meeting waren neben mir nur zwei weitere Frauen im Raum. Ich wollte verstehen, was wir konkret verändern können – und stieß auf Lean In Circles. Obwohl die Notwendigkeit nicht überall sofort gesehen wurde, gewann ich HR, Kolleg:innen und den CEO für die Idee. Daraus entstanden drei bereichsübergreifende Peer-Mentoring-Gruppen für rund 18 Frauen.",
+    bx: "Wenn ich einen Bedarf sehe und Gestaltungsspielraum habe, gehe ich auch über meine unmittelbare Rolle hinaus. Bei einem Leadership-Meeting waren neben mir nur zwei weitere Frauen im Raum. Ich wollte verstehen, was wir konkret verändern können – und stieß auf Lean In Circles. Obwohl die Notwendigkeit nicht überall sofort gesehen wurde, gewann ich HR, Kolleg:innen und den CEO für die Idee. Daraus entstanden drei bereichsübergreifende Peer-Mentoring-Gruppen für rund 18 Frauen.",
     bo: "Heute organisieren sich die Circles weitgehend selbst. Mein Ziel: Frauen sichtbar machen, vernetzen und in ihrer Entwicklung stärken.",
     mk: "More Impact",
     mt: "Drei weitere Beispiele, wie ich Verantwortung wirksam mache.",
@@ -181,7 +181,7 @@ const c = {
         "Today",
         "People & organisation",
         "Creating the conditions for teams to succeed",
-        "Today, I look beyond my own team: I shape interfaces, ways of working and structures so collaboration works across organisational boundaries.",
+        "Today, I look beyond my own team: I shape interfaces, ways of working and structures so collaboration works across team and business-area boundaries.",
       ],
     ],
     claim:
@@ -231,7 +231,7 @@ const c = {
       "Good transformation is not designed in isolation. The crucial details often sit with the people doing the work every day.",
     bk: "Leadership beyond my role · Lean In Circles",
     bt: "Creating a space that did not exist before.",
-    bx: "At a leadership meeting, only two other women were in the room. I wanted to understand what we could change in practice — and discovered Lean In Circles. Although the need was not immediately recognised everywhere, I gained support from HR, colleagues and the CEO. This led to three cross-business peer mentoring groups for around 18 women.",
+    bx: "When I see a need and have room to shape it, I step beyond my immediate role. At a leadership meeting, only two other women were in the room. I wanted to understand what we could change in practice — and discovered Lean In Circles. Although the need was not immediately recognised everywhere, I gained support from HR, colleagues and the CEO. This led to three cross-business peer mentoring groups for around 18 women.",
     bo: "Today, the circles are largely self-organised. My aim is to increase women’s visibility, build connections and support their development.",
     mk: "More Impact",
     mt: "Three more examples of turning responsibility into results.",
@@ -407,8 +407,9 @@ export default function Home() {
             <p>{t.fr}</p>
           </div>
           <div className="featuredParts">
-            {t.fp.map((x) => (
+            {t.fp.map((x, i) => (
               <article key={x[0]}>
+                <span className="impactStep">0{i + 1}</span>
                 <h3>{x[0]}</h3>
                 <p>{x[1]}</p>
               </article>
@@ -422,9 +423,8 @@ export default function Home() {
           <blockquote className="learn">{t.learn}</blockquote>
         </section>
         <section className="section beyond">
-          <div>
-            <p className="eyebrow">{t.bk}</p>
-            <h2>{t.bt}</h2>
+          <H k={t.bk} t={t.bt} />
+          <div className="beyondCopy">
             <p>{t.bx}</p>
             <strong>{t.bo}</strong>
           </div>
