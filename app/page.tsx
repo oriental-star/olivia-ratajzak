@@ -292,6 +292,7 @@ function H({ k, t, light = false }: { k: string; t: string; light?: boolean }) {
 export default function Home() {
   const [lang, setLang] = useState<L>("en"),
     [legal, setLegal] = useState(false);
+  const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
   useEffect(
     () =>
       setLang(navigator.language.toLowerCase().startsWith("de") ? "de" : "en"),
@@ -457,7 +458,7 @@ export default function Home() {
           <div className="driveCopy">
             <p>{t.dx}</p>
             <strong>{t.dw}</strong>
-            <a href="/project">{t.ai} →</a>
+            <a href={`${basePath}/project/`}>{t.ai} →</a>
           </div>
         </section>
         <section className="section contact" id="contact">
