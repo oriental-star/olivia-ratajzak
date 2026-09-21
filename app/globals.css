@@ -324,57 +324,65 @@ nav a:hover {
 .featured {
   background: var(--cream);
 }
-.featuredIntro {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4rem;
+.impactStory {
   margin-left: 31%;
+}
+.impactStory > article {
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  gap: 2rem;
+  padding: 1.6rem 0;
+  border-top: 1px solid var(--line);
+}
+.impactStory > article > span {
+  color: var(--orange);
+  font-size: 0.7rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.11em;
+}
+.impactStory > article > p {
+  margin: 0;
   font-size: 1.08rem;
   line-height: 1.65;
 }
-.featuredParts {
+.impactWork > div {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 5rem;
-  margin-top: 55px;
+  gap: 3.5rem;
 }
-.featuredParts article {
-  padding: 1.75rem 0 0;
-  border-top: 5px solid var(--orange);
-}
-.featuredParts article + article {
-  border-left: 0;
-  padding-left: 0;
-}
-.impactStep {
-  color: var(--orange);
-  font-size: 0.72rem;
-  font-weight: 900;
-  letter-spacing: 0.12em;
-}
-.featuredParts h3 {
+.impactWork section h3 {
   font-size: 1.6rem;
-  margin: 0.85rem 0 0.65rem;
+  margin: 0 0 0.65rem;
 }
-.featuredParts p {
+.impactWork section p {
+  margin: 0;
   line-height: 1.65;
   color: #43504d;
 }
 .metrics {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.75rem;
-  margin-top: 2.5rem;
-  padding-top: 1.5rem;
-  border-top: 1px solid var(--line);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin: 3rem 0 0 31%;
+  border-top: 1px solid var(--ink);
+  border-bottom: 1px solid var(--ink);
 }
-.metrics span {
-  padding: 0.72rem 0.9rem;
-  border: 1px solid var(--ink);
-  font-size: 0.76rem;
+.metrics div {
+  padding: 1.2rem 1.2rem 1.2rem 0;
+}
+.metrics dt {
+  margin-bottom: 0.45rem;
+  color: var(--orange);
+  font-size: 0.68rem;
   font-weight: 900;
   text-transform: uppercase;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.09em;
+}
+.metrics dd {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 800;
+  line-height: 1.25;
 }
 .learn {
   margin: 45px 0 0 31%;
@@ -434,22 +442,21 @@ nav a:hover {
 .drive .eyebrow {
   color: var(--mint);
 }
-.drive h2 {
-  max-width: 1000px;
-  margin: 0.25em 0;
+.driveCopy {
+  margin-left: 31%;
 }
-.drive > p:not(.eyebrow) {
+.driveCopy > p {
   max-width: 760px;
   font-size: 1.15rem;
   line-height: 1.7;
 }
-.drive > strong {
+.driveCopy > strong {
   display: block;
   margin: 2rem 0;
   color: var(--mint);
   font-size: 1.25rem;
 }
-.drive > a,
+.driveCopy > a,
 .textLink {
   display: inline-block;
   font-weight: 900;
@@ -581,7 +588,7 @@ footer button {
     margin-left: 0;
   }
   .sectionIntro,
-  .featuredIntro,
+  .impactStory,
   .claim,
   .learn,
   .timeline,
@@ -602,7 +609,11 @@ footer button {
     gap: 1rem;
   }
   .metrics {
+    margin-left: 0;
     grid-template-columns: 1fr 1fr;
+  }
+  .driveCopy {
+    margin-left: 0;
   }
   .principles {
     grid-template-columns: 1fr;
@@ -656,20 +667,16 @@ footer button {
   .journeyGrid {
     margin-top: 40px;
   }
-  .featuredParts {
+  .impactStory > article {
     grid-template-columns: 1fr;
+    gap: 0.8rem;
   }
-  .featuredParts article,
-  .featuredParts article + article {
-    padding: 1.6rem 0;
-    border-left: 0;
-    border-bottom: 0;
+  .impactWork > div {
+    grid-template-columns: 1fr;
+    gap: 2rem;
   }
   .metrics {
-    display: flex;
-  }
-  .metrics span {
-    border: 1px solid var(--ink);
+    grid-template-columns: 1fr;
   }
   .timeline article {
     grid-template-columns: 1fr;

@@ -84,10 +84,10 @@ const c = {
       ],
     ],
     fs: [
-      "~60 Mitarbeitende im integrierten Bereich",
-      "neue Delivery-Strukturen",
-      "6 → 8 Teammitglieder",
-      "laufende Projekte migriert",
+      ["Umfang der Integration", "~60 Mitarbeitende"],
+      ["Mein Team", "6 → 8 Teammitglieder"],
+      ["Delivery", "Neue gemeinsame Strukturen"],
+      ["Übergang", "Laufende Projekte migriert"],
     ],
     learn:
       "Gute Transformation entsteht nicht am Reißbrett. Die entscheidenden Details kennen oft die Menschen, die täglich mit ihnen arbeiten.",
@@ -222,10 +222,10 @@ const c = {
       ],
     ],
     fs: [
-      "~60 people in the integrated area",
-      "new delivery structures",
-      "6 → 8 team members",
-      "ongoing projects migrated",
+      ["Integration scope", "~60 people"],
+      ["My team", "6 → 8 team members"],
+      ["Delivery", "New shared structures"],
+      ["Transition", "Ongoing projects migrated"],
     ],
     learn:
       "Good transformation is not designed in isolation. The crucial details often sit with the people doing the work every day.",
@@ -402,24 +402,35 @@ export default function Home() {
         </section>
         <section className="section featured" id="impact">
           <H k={t.fk} t={t.ft} />
-          <div className="featuredIntro">
-            <p>{t.fi}</p>
-            <p>{t.fr}</p>
+          <div className="impactStory">
+            <article>
+              <span>{lang === "de" ? "Ausgangslage" : "Starting point"}</span>
+              <p>{t.fi}</p>
+            </article>
+            <article>
+              <span>{lang === "de" ? "Gemeinsamer Beitrag" : "Shared effort"}</span>
+              <p>{t.fr}</p>
+            </article>
+            <article className="impactWork">
+              <span>{lang === "de" ? "In der Umsetzung" : "In practice"}</span>
+              <div>
+                {t.fp.map((x) => (
+                  <section key={x[0]}>
+                    <h3>{x[0]}</h3>
+                    <p>{x[1]}</p>
+                  </section>
+                ))}
+              </div>
+            </article>
           </div>
-          <div className="featuredParts">
-            {t.fp.map((x, i) => (
-              <article key={x[0]}>
-                <span className="impactStep">0{i + 1}</span>
-                <h3>{x[0]}</h3>
-                <p>{x[1]}</p>
-              </article>
+          <dl className="metrics">
+            {t.fs.map(([label, value]) => (
+              <div key={label}>
+                <dt>{label}</dt>
+                <dd>{value}</dd>
+              </div>
             ))}
-          </div>
-          <div className="metrics">
-            {t.fs.map((x) => (
-              <span key={x}>{x}</span>
-            ))}
-          </div>
+          </dl>
           <blockquote className="learn">{t.learn}</blockquote>
         </section>
         <section className="section beyond">
@@ -442,11 +453,12 @@ export default function Home() {
           </div>
         </section>
         <section className="section drive" id="drive">
-          <p className="eyebrow">{t.dk}</p>
-          <h2>{t.dt}</h2>
-          <p>{t.dx}</p>
-          <strong>{t.dw}</strong>
-          <a href="/project">{t.ai} →</a>
+          <H k={t.dk} t={t.dt} light />
+          <div className="driveCopy">
+            <p>{t.dx}</p>
+            <strong>{t.dw}</strong>
+            <a href="/project">{t.ai} →</a>
+          </div>
         </section>
         <section className="section contact" id="contact">
           <p className="eyebrow">{t.ck}</p>
