@@ -322,7 +322,7 @@ nav a:hover {
   max-width: 520px;
 }
 .featured {
-  background: var(--cream);
+  background: var(--paper);
 }
 .impactStory {
   margin-left: 0;
@@ -348,8 +348,12 @@ nav a:hover {
 }
 .impactWork > div {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 3.5rem;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+.impactWork section + section {
+  padding-top: 2rem;
+  border-top: 1px solid var(--line);
 }
 .impactWork section h3 {
   font-size: 1.6rem;
